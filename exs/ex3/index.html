@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bar {
+            width: 0px;
+            height: 15px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        #counter {
+            background-color: aliceblue;
+            display: flex;
+        }
+
+        #counter button {
+            width: 30px;
+            height: 30px;
+            background-color: blanchedalmond;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        #counter div {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <div id="counter">
+        <button onclick="decrease()">-</button>
+        <div>1</div>
+        <button onclick="increase()">+</button>
+    </div>
+    <div id="bar"></div>
+<script>
+    var num = 1;
+    function decrease() {
+        //debugger;
+        num = num - 1;
+        document.querySelector("#counter > div").innerText = num;
+        document.querySelector("#bar").style.width = (num +10)+"px";
+    }
+
+    function increase() {
+        num = num + 1;
+        document.querySelector("#counter > div").innerText = num;
+        document.querySelector("#bar").style.width = (num +10)+"px";
+    }
+</script>
+</body>
+</html>
